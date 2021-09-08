@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewData["Title"] = "WirePick";
+}
+
+<h1>Countries List</h1>
+
+@*Method 1: Receiving data from the controller using (ViewBag)*@
+@*<ul>
+        @foreach (String country in ViewBag.Countries)
+        {
+        <li>@country</li>
+        }
+    </ul>*@
+
+@*Method 2: Receiving data from the controller using (ViewData)*@
+<ul>
+    @foreach (String country in (List<String>)ViewData["Countries"])
+    {
+        <li>@country</li>
+    }
+</ul>
+
