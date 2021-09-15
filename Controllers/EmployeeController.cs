@@ -9,15 +9,11 @@ namespace mvcdemo.Controllers
 {
     public class EmployeeController : Controller
     {
-        public IActionResult Details()
+        public IActionResult Details(int id)
         {
-            Employee employee = new Employee()
-            {
-                EmployeeId = 101,
-                Name = "Mututwa", 
-                Gender = "Male",
-                City = "Lusaka"
-            };
+            EmployeeContext employeeContext = new EmployeeContext();
+
+            Employee employee = employeeContext.Employees.Single(emp => emp.EmployeeId == id);
 
             return View(employee);
         }

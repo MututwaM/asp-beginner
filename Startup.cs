@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -15,6 +16,7 @@ namespace mvcdemo
     {
         public Startup(IConfiguration configuration)
         {
+            Database.SetInitializer<mvcdemo.Models.EmployeeContext>(null);
             Configuration = configuration;
         }
 
